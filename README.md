@@ -1,5 +1,5 @@
 # Zettlr-GTK4-Theme
-A GTK4 inspired theme for Zettlr
+A GTK4 inspired theme for Zettlr [www.zettlr.com]
 
 1. Place the contents of this repository in a folder named `Zettlr-GTK4-Theme` in the Zettlr directory.
 
