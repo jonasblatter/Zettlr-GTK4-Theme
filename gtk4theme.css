@@ -1,0 +1,416 @@
+body.linux {
+  --color-window: #ebebeb;
+  --color-background: #fafafa;
+  --color-page: #ffffff;
+  --color-menu: #ffffff;
+  --color-back: #e6e6e6;
+  --color-tab: #dedede;
+  --color-text: #000000;
+  --color-text-inactive: #808080;
+  --color-button: #d9d9d9;
+  --color-button-hover: #cfcfcf;
+  --color-button-active: #b3b3b3;
+  --color-button-active-hover: #a9a9a9;
+  --color-button-border: #9f9f9f;
+  --color-button-flat-hover: #dedede;
+  --color-border: #d5d5d5;
+  --color-outline: #dadada;
+  --color-selection: #dedede;
+  --color-highlight: var(--c-primary);
+  --color-highlight-hover: var(--c-primary-shade);
+  
+  --height-toolbar: 46px;
+  --button-radius: 6px;
+}
+body.linux.dark {
+  --color-window: #303030;
+  --color-background: #242424;
+  --color-page: #1e1e1e;
+  --color-menu: #303030;
+  --color-back: #1e1e1e;
+  --color-tab: #5a5a5a;
+  --color-text: #ffffff;
+  --color-button: #444444;
+  --color-button-hover: #5a5a5a;
+  --color-button-active: #6e6e6e;
+  --color-button-active-hover: #7a7a7a;
+  --color-button-border: #848484;
+  --color-button-flat-hover: #3e3e3e;
+  --color-border: #505050;
+  --color-outline: #1f1f1f;
+  --color-selection: #5a5a5a;
+  --color-highlight: var(--c-primary-shade);
+  --color-highlight-hover: var(--c-primary);
+}
+body.linux.dark img, 
+body.linux.dark *::before {
+  filter: invert(100%);
+}
+body.linux,
+body.linux #menubar,
+body.linux #sidebar,
+body.linux clr-icon svg,
+body.linux div.application-menu,
+body.linux .tree-item .display-text {
+  font-family: Cantarell;
+  font-size: 15px;
+}
+body.linux div#window-chrome {
+  display: grid;
+  grid: 'title tool menu ctrl' 34px / auto 1fr auto auto;
+  padding: 6px;
+  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-window) !important;
+  border-bottom: 1px solid var(--color-outline);
+}
+body.linux div#window-chrome > * {
+  background-color: unset !important;
+}
+body.linux div#titlebar {
+  grid-area: title;
+  width: 106px;
+  padding: 0;
+}
+body.linux div#menubar {
+  grid-area: menu;
+  flex-direction: row-reverse;
+}
+body.linux div#toolbar {grid-area: tool;}
+body.linux div.tab-list {grid-area: tool;}
+body.linux div#toolbar,
+body.linux div.tab-list {
+  -webkit-app-region: drag;
+  padding: 0;
+  background-color: unset !important;
+}
+body.linux div#toolbar > *,
+body.linux div.tab-list > * {
+  -webkit-app-region: no-drag;
+}
+body.linux div#window-controls  {
+  position: unset;
+  grid-area: ctrl;
+  display: flex;
+  gap: 12px;
+  padding: 0 5px;
+}
+body.linux div#window-controls > div {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  margin: 0;
+  background-color: var(--color-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: unset;
+}
+body.linux div#window-controls div svg {
+  display: none;
+}
+body.linux div#window-controls div::before {
+  width: 16px !important;
+  height: 16px !important;
+}
+body.linux div#window-controls .minimise::before {
+  content: url(icons/window-minimize-symbolic.svg);
+}
+body.linux div#window-controls .resize::before {
+  content: url(icons/window-maximize-symbolic.svg);
+}
+body.linux div#window-controls .close::before {
+  content: url(icons/window-close-symbolic.svg);
+}
+body.linux #file-tree,
+body.linux #sidebar {
+  background-color: var(--color-window) !important;
+}
+body.linux div#toolbar,
+body.linux div#menubar {
+  display: flex;
+  gap: 6px;
+  height: 34px;
+  width: auto;
+  background: unset;
+  padding: 0;
+}
+body.linux div#toolbar button,
+body.linux div#menubar span.top-level-item {
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  border: none;
+  border-radius: var(--button-radius);
+  line-height: unset;
+  overflow: hidden;
+  color: transparent;
+}
+body.linux div#toolbar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.linux div#menubar span.top-level-item {
+  padding: 9px;
+}
+body.linux div#toolbar div.spacer {
+  display: none;
+}
+body.linux div#toolbar div#toolbar-document-info {
+  margin: auto;
+}
+body.linux div#toolbar button:hover,
+body.linux div#menubar span.top-level-item:hover {
+  background-color: var(--color-button-flat-hover) !important;
+}
+body.linux div#toolbar div.three-way-toggle {
+  border: 0;
+  margin: 0;
+}
+body.linux div#toolbar div.three-way-toggle button {
+  width: 64px;
+  background-color: var(--color-button) !important;
+}
+body.linux div#toolbar div.three-way-toggle button:hover {
+  background-color: var(--color-button-hover) !important;
+}
+body.linux div#toolbar div.three-way-toggle button.active {
+  background-color: var(--color-button-active) !important;
+}
+body.linux div#toolbar div.three-way-toggle button.active:hover {
+  background-color: var(--color-button-active-hover) !important;
+}
+body.linux div#toolbar div.three-way-toggle button:first-child {
+  border-top-left-radius: var(--button-radius);
+  border-bottom-left-radius: var(--button-radius);
+  border-right: 1px solid var(--color-button-active) !important;
+}
+body.linux div#toolbar div.three-way-toggle button:last-child {
+  border-top-right-radius: var(--button-radius);
+  border-bottom-right-radius: var(--button-radius);
+}
+
+
+body.linux div#toolbar button::before,
+body.linux div#menubar > span.top-level-item::before {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+body.linux div#toolbar button cds-icon {
+  display: none;
+}
+body.linux div#toolbar button[title='File manager']::before {
+  content: url(icons/sidebar-places-symbolic.svg);
+}
+body.linux div#toolbar button[title='Global search']::before {
+  content: url(icons/edit-find-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-root-open-workspaces::before {
+  content: url(icons/document-open-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-show-stats::before {
+  content: url(icons/help-info-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-show-tag-cloud::before {
+  content: url(icons/edit-tag-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-open-preferences::before {
+  content: url(icons/application-menu-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-new-file::before {
+  content: url(icons/document-new-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-previous-file::before {
+  content: url(icons/pane-show-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-next-file::before {
+  content: url(icons/pane-hide-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-export::before {
+  content: url(icons/document-export-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-toggle-readability::before {
+  content: url(icons/view-reveal-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-markdownComment::before {
+  content: url(icons/chat-message-new-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-markdownLink::before {
+  content: url(icons/insert-link-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-markdownImage::before {
+  content: url(icons/insert-image-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-markdownMakeTaskList::before {
+  content: url(icons/checkbox-checked-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-insert-table::before {
+  content: url(icons/accessories-calculator-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-insertFootnote::before {
+  content: url(icons/xapp-use-regex-symbolic.svg);
+}
+body.linux div#toolbar button#toolbar-pomodoro {
+  padding: 6px;
+}
+body.linux div#toolbar button#toolbar-toggle-sidebar::before {
+  content: url(icons/sidebar-show-right-symbolic.svg);
+}
+body.linux div#menubar > span:nth-of-type(1)::before {
+  content: url(icons/open-menu-symbolic.svg);
+}
+body.linux div#menubar > span:nth-of-type(2)::before {
+  content: url(icons/edit-find-replace-symbolic.svg);
+}
+body.linux div#menubar > span:nth-of-type(3)::before {
+  content: url(icons/document-properties-symbolic.svg);
+}
+body.linux div#menubar > span:nth-of-type(4),
+body.linux div#menubar > span:nth-of-type(5),
+body.linux div#menubar > span:nth-of-type(6) {
+  display: none;
+}
+
+body.linux div.application-menu {
+  background-color: var(--color-menu);
+  border-color: var(--color-border);
+  border-radius: 8px;
+  padding: 6px;
+}
+body.linux div.application-menu div.menu-item {
+  height: unset;
+  margin: 0px;
+  padding: 2px 8px;
+  border-radius: var(--button-radius);
+}
+body.linux div.application-menu div.separator {
+  border-color: var(--color-border);
+  margin: 6px 0px;
+  padding: 0px;
+}
+body.linux div.application-menu div.menu-item:hover {
+  background-color: var(--color-selection) !important;
+}
+
+body.linux #file-manager .file-manager-filter,
+body.linux div[role="tablist"] {
+  height: var(--height-toolbar);
+  background-color: var(--color-window) !important;
+  border-bottom: 1px solid var(--color-outline);
+  padding: 6px;
+  gap: 6px;
+  align-items: center;
+}
+body.linux #file-manager .file-manager-filter input.file-manager-filter-input,
+body.linux div[role="tablist"] :is(div,button)[role="tab"] {
+  min-width: unset;
+  max-width: unset;
+  height: 34px;
+  font-size: 14px;
+  font-family: Cantarell;
+  color: var(--color-text) !important;
+  background-color: unset !important;
+  border-radius: var(--button-radius);
+  border: none !important;
+  align-items: center;
+  justify-content: space-between;
+}
+body.linux div[role="tablist"] div[role="tab"]::before {
+  content: "";
+  width: 10px;
+}
+body.linux div[role="tablist"] div[role="tab"] {flex: 1 1 0px;}
+body.linux div[role="tablist"] button[role="tab"] {flex: 0 1 102px;}
+
+body.linux #file-manager #component-container {
+  height: calc(100% - var(--height-toolbar));
+}
+body.linux #file-manager .file-manager-filter input.file-manager-filter-input {
+  background-color: var(--color-button) !important;
+  padding: 0 10px;
+}
+body.linux #file-manager .file-manager-filter input.file-manager-filter-input:focus {
+  outline: 2px solid var(--system-accent-color);
+  outline-offset: -2px;
+}
+
+body.linux div[role="tablist"] :is(div,button)[role="tab"].active {
+  background-color: var(--color-button) !important;
+  border-bottom: none;
+}
+body.linux div[role="tablist"] :is(div,button)[role="tab"]:hover {
+  background-color: var(--color-button-hover) !important;
+}
+body.linux div[role="tablist"] :is(div,button)[role="tab"]:not(:last-child) {
+  border-right: none;
+}
+body.linux div[role="tablist"] :is(div,button)[role="tab"] .filename {
+  max-width: unset;
+  text-align: center;
+  flex: 0 1 180px;
+}
+
+body.linux *::-webkit-scrollbar,
+body.linux *::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+body.linux *::-webkit-scrollbar-thumb {
+  background-color: var(--color-border) !important;
+  background-clip: padding-box;
+  border: 6px solid transparent;
+  border-radius: 2px;
+}
+body.linux *:hover::-webkit-scrollbar-thumb {
+  background-color: var(--color-button-active) !important;
+  border-width: 4px;
+  border-radius: 8px;
+}
+body.linux *:hover::-webkit-scrollbar-track {
+  background-color: var(--color-window) !important;
+  background-clip: padding-box;
+  border: 4px solid transparent;
+  border-radius: 8px;
+}
+body.linux ::-webkit-scrollbar-button  {
+  height: 0px;
+  width: 0px;
+}
+
+body.linux div.tree-item-container .tree-item {
+  height: 34px;
+  margin: 2px 6px;
+  border-radius: var(--button-radius);
+  align-items: center;
+}
+body.linux div.tree-item-container .tree-item:hover {
+  background-color: var(--color-button-flat-hover) !important;
+}
+body.linux div.tree-item-container .tree-item.selected {
+  background-color: var(--color-highlight) !important;
+  color: var(--system-accent-color-contrast, --c-primary-contrast) !important;
+  font-weight: bold;
+}
+body.linux div.tree-item-container .tree-item.selected:hover {
+  background-color: var(--color-highlight-hover) !important;
+}
+body.linux div.tree-item-container .tree-item.selected .display-text {
+  background-color: transparent !important;
+}
+body.linux #file-tree #directories-dirs-header,
+body.linux #file-tree #directories-files-header {
+  display: flex;
+  border-bottom: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  margin: 0;
+  align-items: center;
+  gap: 5px;
+}
+body.linux cds-icon {
+  width: 16px;
+  height: 16px;
+}
