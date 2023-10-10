@@ -10,3 +10,7 @@ A GTK4 inspired theme for Zettlr
 ```
 
 > Alternatively, you can paste the code into the "Custom CSS" field in Zettlr's "File/Preferences/Asset Manager [Ctrl+ALt+,]".
+
+3. You can replace the icons in the "icons" folder with icons from any theme you like.
+
+> The current icons are from the "Papirus Icon Theme" [https://git.io/papirus-icon-theme]
