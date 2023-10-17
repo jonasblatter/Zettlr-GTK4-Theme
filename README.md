@@ -1,6 +1,10 @@
 # Zettlr-GTK4-Theme
 A GTK4 inspired theme for Zettlr [www.zettlr.com]
 
+![Screenshot of the Zettlr gtk4 theme](gtk4theme.png)
+
+## Setup Guide
+
 1. Place the contents of this repository in a folder named `Zettlr-GTK4-Theme` in the Zettlr directory.
 
 2. Add the following to the custom.css document in the Zettlr directory (if no such file exists, create it):
